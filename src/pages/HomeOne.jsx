@@ -1,19 +1,21 @@
 import { NavLink } from "react-router";
 
 export default function HomeOne() {
+
+
   return (
     <>
-      <div className="grid grid-cols-3 grid-rows-2 gap-6 w-full text-white font-sans">
+      <div className="pt-4 px-4 pb-16 grid grid-cols-2 grid-rows-2 sm:grid-cols-3 sm:grid-rows-2 gap-4 w-full text-white font-poppins">
         <NavLink
           to="/register"
-          className="relative rounded-3xl overflow-hidden col-span-2 p-7 min-h-[180px] bg-gradient-to-br from-cyan-900 via-cyan-700 to-cyan-500 border border-purple-900 flex items-start hover:scale-105 hover:contrast-125 transition-transform duration-300 group"
+          className="slide-fade-in-left relative rounded-3xl overflow-hidden col-span-2 p-7 min-h-[180px] bg-gradient-to-br from-cyan-900 via-cyan-700 to-cyan-500 border border-purple-900 flex items-start hover:scale-105 hover:contrast-125 transition-transform duration-300 group"
         >
-          <span className="absolute bottom-2 right-2 font-bold text-2xl">
-            Register
+          <span className="absolute bottom-2 right-2 font-bold text-xl sm:text-2xl">
+            Registrar
           </span>
 
           <svg
-            className="absolute -left-3 -bottom-3 size-30 -rotate-4 group-hover:-rotate-12 group-hover:scale-125 transition-transform duration-300"
+            className="absolute -left-3 -bottom-3 size-22 sm:size-30 -rotate-4 group-hover:-rotate-12 group-hover:scale-125 transition-transform duration-300"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
@@ -29,20 +31,20 @@ export default function HomeOne() {
           </svg>
 
           <span className="absolute top-2 left-2 text-xs border rounded-xl px-2 py-0.5">
-            Register a new employee
+            Registrar un nuevo empleado
           </span>
         </NavLink>
 
         <NavLink
           to={"/filter"}
-          className="relative rounded-3xl overflow-hidden col-span-1 p-7 min-h-[180px] bg-gradient-to-br from-[#263b36] via-[#30554e] to-[#498375] border border-[#263b36] flex items-start hover:scale-105 hover:contrast-125 transition-transform duration-300 group"
+          className="slide-fade-in-right relative rounded-3xl overflow-hidden col-span-1 p-7 min-h-[180px] bg-gradient-to-br from-[#263b36] via-[#30554e] to-[#498375] border border-[#263b36] flex items-start hover:scale-105 hover:contrast-125 transition-transform duration-300 group"
         >
-          <span className="absolute bottom-2 left-2 font-bold text-2xl">
-            Filters
+          <span className="absolute bottom-2 left-2 font-bold text-xl sm:text-2xl">
+            Filtros
           </span>
 
           <svg
-            className="absolute -right-3 -bottom-3 size-30 -rotate-4 group-hover:rotate-12 group-hover:scale-125 transition-transform duration-300"
+            className="absolute -right-3 -bottom-3 size-22 sm:size-30 -rotate-4 group-hover:rotate-12 group-hover:scale-125 transition-transform duration-300"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
@@ -55,17 +57,20 @@ export default function HomeOne() {
           </svg>
 
           <span className="absolute top-2 left-2 text-xs border rounded-xl px-2 py-0.5">
-            Filters for employees
+            Filtros de empleados
           </span>
         </NavLink>
 
-        <a className="relative rounded-3xl overflow-hidden col-span-1 p-7 min-h-[180px] bg-gradient-to-br from-[#5a3634] via-[#884b46] to-[#b16e5e] border border-[#5a3634] flex items-start hover:scale-105 hover:contrast-125 transition-transform duration-300 cursor-not-allowed group">
-          <span className="absolute bottom-2 left-2 font-bold text-2xl">
-            Update
+        <NavLink
+          to={"*"}
+          className="slide-fade-in-left relative rounded-3xl overflow-hidden col-span-1 p-7 min-h-[180px] bg-gradient-to-br from-[#5a3634] via-[#884b46] to-[#b16e5e] border border-[#5a3634] flex items-start hover:scale-105 hover:contrast-125 transition-transform duration-300 cursor-not-allowed group"
+        >
+          <span className="absolute bottom-2 left-2 font-bold text-xl sm:text-2xl">
+            Actualizar 
           </span>
 
           <svg
-            className="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-45 group-hover:scale-125 transition-transform duration-300"
+            className="absolute -right-4 -bottom-4 -rotate-6 size-22 sm:size-30 group-hover:-rotate-45 group-hover:scale-125 transition-transform duration-300"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -83,17 +88,20 @@ export default function HomeOne() {
           </svg>
 
           <span className="absolute top-2 left-2 text-xs border rounded-xl px-2 py-0.5 text-cyan-600">
-            Invalid
+            Not available
           </span>
-        </a>
+        </NavLink>
 
-        <a className="relative rounded-3xl overflow-hidden col-span-1 p-7 min-h-[180px] bg-gradient-to-br from-red-500 via-red-700 to-red-500 border border-[#920a0a] flex items-start hover:scale-105 hover:contrast-125 transition-transform duration-300 cursor-not-allowed group">
-          <span className="absolute bottom-2 left-2 font-bold text-2xl">
-            Delete
+        <NavLink
+          to={"*"}
+          className="slide-fade-in-up relative rounded-3xl overflow-hidden col-span-1 p-7 min-h-[180px] bg-gradient-to-br from-red-500 via-red-700 to-red-500 border border-[#920a0a] flex items-start hover:scale-105 hover:contrast-125 transition-transform duration-300 cursor-not-allowed group"
+        >
+          <span className="absolute bottom-2 left-2 font-bold text-xl sm:text-2xl">
+            Eliminar
           </span>
 
           <svg
-            className="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform duration-300"
+            className="absolute -right-4 -bottom-4 -rotate-6 size-22 sm:size-30 group-hover:-rotate-12 group-hover:scale-125 transition-transform duration-300"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -110,17 +118,20 @@ export default function HomeOne() {
           </svg>
 
           <span className="absolute top-2 left-2 text-xs border rounded-xl px-2 py-0.5 text-black">
-            Invalid
+            Not available
           </span>
-        </a>
+        </NavLink>
 
-        <a className="relative rounded-3xl overflow-hidden col-span-1 p-7 min-h-[180px] bg-gradient-to-br from-gray-900 via-gray-700 to-gray-500 border border-gray-900 flex items-start hover:scale-105 hover:contrast-125 transition-transform duration-300 cursor-not-allowed group">
-          <span className="absolute bottom-2 left-2 font-bold text-2xl">
-            Settings
+        <NavLink
+          to={"*"}
+          className="slide-fade-in-right relative rounded-3xl overflow-hidden col-span-1 p-7 min-h-[180px] bg-gradient-to-br from-gray-900 via-gray-700 to-gray-500 border border-gray-900 flex items-start hover:scale-105 hover:contrast-125 transition-transform duration-300 cursor-not-allowed group"
+        >
+          <span className="absolute bottom-2 left-2 font-bold text-xl sm:text-2xl">
+            Ajustes
           </span>
 
           <svg
-            className="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-45 group-hover:scale-125 transition-transform duration-300"
+            className="absolute -right-4 -bottom-4 -rotate-6 size-22 sm:size-30 group-hover:-rotate-45 group-hover:scale-125 transition-transform duration-300"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
@@ -133,9 +144,9 @@ export default function HomeOne() {
             <circle cx="12" cy="12" r="3" />
           </svg>
           <span className="absolute top-2 left-2 text-xs border rounded-xl px-2 py-0.5 text-red-600">
-            Invalid
+            Not available
           </span>
-        </a>
+        </NavLink>
       </div>
     </>
   );

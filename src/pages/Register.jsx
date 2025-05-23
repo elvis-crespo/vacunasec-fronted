@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import { useForm } from "../hooks/useForm";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../utils/config";
 
 export default function Register() {
   const { values, handleChange, reset } = useForm({
@@ -37,7 +38,7 @@ export default function Register() {
   };
 
   const handleFetch = async (formData) => {
-    const url = "http://localhost:7070/api/create";
+    const url = `${API_BASE_URL}create`;
 
     try {
       await axios.post(url, formData, {
@@ -83,7 +84,7 @@ export default function Register() {
 
   return (
     <>
-      <div className="max-w-4xl mx-auto mt-10 bg-white p-8 shadow-lg rounded-lg font-sans">
+      <div className="appear max-w-4xl mx-auto mt-10 bg-white p-8 shadow-lg rounded-lg font-display">
         <h2 className="text-2xl font-bold mb-6 text-gray-800">
           Datos del Empleado
         </h2>
@@ -407,7 +408,7 @@ export default function Register() {
             </select>
           </div>
 
-          <div className="md:col-span-2 col-span-1 flex justify-between mt-4">
+          <div className="md:col-span-2 col-span-1 flex justify-between items-center mt-4">
             <div>
               <button
                 className="bg-white text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold cursor-pointer group"
@@ -435,16 +436,16 @@ export default function Register() {
               </button>
             </div>
 
-            <div className="flex space-x-4">
+            <div className="flex items-center justify-center space-x-4">
               <button
                 type="submit"
-                className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition cursor-pointer"
+                className="bg-blue-600 text-white font-semibold px-6 py-2 h-[42px] rounded-lg hover:bg-blue-700 transition cursor-pointer"
               >
                 Registrar Empleado
               </button>
               <button
                 type="reset"
-                className="bg-gray-300 text-gray-800 font-semibold px-6 py-2 rounded-lg hover:bg-gray-400 transition cursor-pointer"
+                className="bg-gray-300 text-gray-800 font-semibold px-6 py-2 h-[42px] rounded-lg hover:bg-gray-400 transition cursor-pointer"
                 onClick={reset}
               >
                 Limpiar

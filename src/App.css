@@ -1,1 +1,78 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Inter";
+  src: url("src/assets/fonts/Inter-VariableFont_slnt,wght.woff2") format("truetype");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-poppins: Poppins, sans-serif, system-ui;
+}
+
+@keyframes slideFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-fade-in-up {
+  animation: slideFadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes slideFadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-fade-in-left {
+  animation: slideFadeInLeft 0.6s ease-out forwards;
+}
+
+@keyframes slideFadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-fade-in-right {
+  animation: slideFadeInRight 0.6s ease-out forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.appear {
+  animation: appear 0.4s ease-out forwards;
+}

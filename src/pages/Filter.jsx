@@ -1,7 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
+import { API_BASE_URL } from "../utils/config";
 
 export default function Filter() {
   const [documentID, setDocumentID] = useState("");
@@ -34,7 +35,7 @@ export default function Filter() {
       setIsLoading(true); 
       setEmployees([]); 
       const response = await axios.get(
-        `http://localhost:7070/api/findByDocumentID/${documentID}`
+        `${API_BASE_URL}findByDocumentID/${documentID}`
       );
       setEmployees([response.data]);
       setLastSearchedID(documentID);
@@ -80,7 +81,7 @@ export default function Filter() {
       setLastSearchedID(null);
       setEmployees([]);
 
-      const response = await axios.get("http://localhost:7070/api/findall");
+      const response = await axios.get(`${API_BASE_URL}findall`);
       setEmployees(response.data);
       setAllFetched(true);
     } catch (error) {
@@ -104,7 +105,7 @@ export default function Filter() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg font-sans">
+    <div className="appear max-w-6xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg font-display">
       <h2 className="text-2xl font-bold mb-4 text-gray-800">
         Consulta de Empleados
       </h2>
@@ -138,7 +139,7 @@ export default function Filter() {
           type="button"
           onClick={handleShowAll}
           disabled={isLoading}
-          className={`font-semibold px-6 py-2 cursro-pointer rounded-lg transition ${
+          className={`font-semibold px-6 py-2 cursor-pointer rounded-lg transition ${
             isLoading
               ? "bg-gray-200 cursor-not-allowed"
               : "bg-gray-300 hover:bg-gray-400 text-gray-800"
@@ -170,14 +171,14 @@ export default function Filter() {
             ) : employees.length > 0 ? (
               employees.map((emp) => (
                 <tr key={emp.documentID}>
-                  <td className="px-4 py-2">{emp.documentID}</td>
+                  <td className="px-4 py-2">{emp.documentID || "❌"}</td>
                   <td className="px-4 py-2">
-                    {emp.firstName} {emp.lastName}
+                    {emp.firstName} {emp.lastName || "❌"}
                   </td>
-                  <td className="px-4 py-2">{emp.email}</td>
-                  <td className="px-4 py-2">{emp.vaccinationStatus}</td>
-                  <td className="px-4 py-2">{emp.vaccine}</td>
-                  <td className="px-4 py-2">{emp.numberDoses}</td>
+                  <td className="px-4 py-2">{emp.email || "❌"}</td>
+                  <td className="px-4 py-2">{emp.vaccinationStatus || "❌"}</td>
+                  <td className="px-4 py-2">{emp.vaccine || "❌"}</td>
+                  <td className="px-4 py-2">{emp.numberDoses || "❌"}</td>
                 </tr>
               ))
             ) : (
